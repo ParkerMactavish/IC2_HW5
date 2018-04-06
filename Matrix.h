@@ -1,4 +1,4 @@
-ï»¿#pragma once
+#pragma once
 
 #ifndef MATRIX_H
 #define MATRIX_H
@@ -7,42 +7,42 @@
 using namespace std;
 
 /*
- * ç°¡å–®çš„çŸ©é™£ç›¸åŠ å’Œç›¸ä¹˜
- */
- 
+* Â²³æªº¯x°}¬Û¥[©M¬Û­¼
+*/
+
 class Matrix {
 private:
-	double ** data;			// ä¸€å€‹äºŒç¶­çš„doubleçŸ©é™£
-	int row;			// å„²å­˜dataå…±æœ‰å¹¾å€‹row
-	int col;			// å„²å­˜dataå…±æœ‰å¹¾å€‹col
-	void setUp(int, int);		// utility function, è¨­å®šrowå’Œcolçš„å€¼
+	double ** data;			// ¤@­Ó¤Gºûªºdouble¯x°}
+	int row;			// Àx¦sdata¦@¦³´X­Órow
+	int col;			// Àx¦sdata¦@¦³´X­Ócol
+	void setUp(int, int);		// utility function, ³]©wrow©Mcolªº­È
 
 public:
-	Matrix();			// default constructor, ä»€éº¼éƒ½ä¸å‚³, å°‡dataå­˜å…¥2*2éƒ½æ˜¯0çš„å€¼
-	Matrix(int, int);		// constructor, åªè¨­å®šå¤§å°, è³‡æ–™é è¨­ç‚º0
-	//Matrix(int, int, double [], int);// constructor, å°‡å‚³å…¥çš„ä¸€ç¶­é™£åˆ—è½‰å­˜ç‚ºäºŒç¶­é™£åˆ—æ”¾å…¥dataä¸­
+	Matrix();			// default constructor, ¤°»ò³£¤£¶Ç, ±Ndata¦s¤J2*2³£¬O0ªº­È
+	Matrix(int, int);		// constructor, ¥u³]©w¤j¤p, ¸ê®Æ¹w³]¬°0
+	Matrix(int, int, double [], int);// constructor, ±N¶Ç¤Jªº¤@ºû°}¦CÂà¦s¬°¤Gºû°}¦C©ñ¤Jdata¤¤
 	Matrix(const Matrix &);		// copy constructor
-	~Matrix();			// destructor, æ¸…ç†data
+	~Matrix();			// destructor, ²M²zdata
 
-	void setData(int, int, double);	// è¨­å®šç¬¬(r,c)ä½ç½®dataçš„å€¼
+	void setData(int, int, double);	// ³]©w²Ä(r,c)¦ì¸mdataªº­È
 
-	int getRow() const;		// å›å‚³private member: row
-	int getCol() const;		// å›å‚³private member: col
-	double getData(int, int) const;	// æ‹¿åˆ°çŸ©é™£(r,c)ä½ç½®çš„å€¼
+	int getRow() const;		// ¦^¶Çprivate member: row
+	int getCol() const;		// ¦^¶Çprivate member: col
+	double getData(int, int) const;	// ®³¨ì¯x°}(r,c)¦ì¸mªº­È
 
-	Matrix add(const Matrix &);		// çŸ©é™£ç›¸åŠ , å›å‚³ç›¸åŠ å¾Œçš„çŸ©é™£
-	//Matrix multiply(const Matrix &);	// çŸ©é™£ç›¸ä¹˜, å›å‚³ç›¸ä¹˜å¾Œä¹‹çŸ©é™£
-	//Matrix transpose(const Matrix &);	// çŸ©é™£è½‰ç½®, å›å‚³è½‰ç½®å¾Œçš„çŸ©é™£
-    
+	Matrix add(const Matrix &);		// ¯x°}¬Û¥[, ¦^¶Ç¬Û¥[«áªº¯x°}
+	Matrix multiply(const Matrix &);	// ¯x°}¬Û­¼, ¦^¶Ç¬Û­¼«á¤§¯x°}
+	Matrix transpose();	// ¯x°}Âà¸m, ¦^¶ÇÂà¸m«áªº¯x°}
+
 	void displayData() {
-		for (int i = 0;i<row; i++) {
-			for (int j = 0;j<col; j++) {
-					cout<<data[i][j]<<"\t";
-    			}
-			cout<<""<<endl;
+		for (int i = 0; i<row; i++) {
+			for (int j = 0; j<col; j++) {
+				cout << data[i][j] << "\t";
+			}
+			cout << "" << endl;
 		}
 	}
-		
+
 };
 
 #endif
